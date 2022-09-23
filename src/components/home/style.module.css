@@ -1,0 +1,28 @@
+.container {
+  width: 100vw;
+  height: 20em;
+}
+
+.cardContainer {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  overflow-x: scroll;
+}
+
+h1 {
+  text-align: center;
+  margin: 1em 0 1em 0;
+  color: #ec5990;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: "Righteous", cursive;
+}
+/*# sourceMappingURL=style.module.css.map */
