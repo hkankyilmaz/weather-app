@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./style.module.css";
 import CardCity from "./cityCard";
+import CityLabel from "./cityLabel";
 
 const Home = () => {
   return (
@@ -13,8 +14,72 @@ const Home = () => {
         <CardCity />
         <CardCity />
         <CardCity />
-        <CardCity />
-        <CardCity />
+      </div>
+      <input placeholder="Şehir Arayın..." />
+      <div className={styles.listContainer}>
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
+        <CityLabel />
       </div>
     </div>
   );

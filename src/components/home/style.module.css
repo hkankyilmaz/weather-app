@@ -3,6 +3,30 @@
   height: 20em;
 }
 
+.container input {
+  margin: 1rem 0;
+  display: block;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 10px 20px;
+  border: 2px solid #ec5990;
+  -webkit-appearance: none;
+          appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  font-family: "Righteous", cursive;
+}
+
+.container input:focus {
+  border: 3px solid #ec5990;
+}
+
 .cardContainer {
   height: 100%;
   display: -webkit-box;
@@ -24,5 +48,20 @@ h1 {
   font-size: 2em;
   font-weight: bold;
   font-family: "Righteous", cursive;
+}
+
+.listContainer {
+  padding: 1em 4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 /*# sourceMappingURL=style.module.css.map */
