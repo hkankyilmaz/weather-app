@@ -6,7 +6,6 @@ button {
   font-family: "Righteous", cursive;
   background-color: white;
   margin: 0.5em 0.5em 0.5em 0;
-  cursor: pointer;
 }
 
 button:hover {

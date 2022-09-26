@@ -1,7 +1,11 @@
 import React from "react";
 import styles from "./style.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { cities } from "../../../constants/cities";
 
-const CardCity = () => {
+const CardCity = ({ city }) => {
+  const infoCities = useSelector((state) => state.weather.data);
+
   return (
     <div className={styles.container}>
       <div className={styles.weatherInfo}>
