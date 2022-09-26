@@ -2,8 +2,8 @@ export const mainCities = [
   {
     id: 34,
     name: "İstanbul",
-    latitude: "41.0053",
-    longitude: "28.9770",
+    latitude: "41.0351",
+    longitude: "28.9833",
     population: 14657434,
     region: "Marmara",
   },

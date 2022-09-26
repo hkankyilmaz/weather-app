@@ -30,11 +30,21 @@
   }
 }
 .cardContainer {
+  position: relative;
   height: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   overflow-x: scroll;
+  .status {
+    color: #ec5990;
+    font-size: x-large;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 h1 {
   text-align: center;

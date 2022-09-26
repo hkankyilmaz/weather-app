@@ -5,7 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import Header from "./components/header";
-import Home, { loader as homeLoader } from "./components/home";
+import Home, { Loader as homeLoader } from "./components/home";
 import Detail from "./components/cityWeatherDetail";
 
 const router = createBrowserRouter(

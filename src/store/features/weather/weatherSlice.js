@@ -8,14 +8,10 @@ import {
 const weatherSlice = createSlice({
   name: "weather",
   initialState: {
-    id: null,
-    name: null,
-    latitude: null,
-    longitude: null,
-    population: null,
-    region: null,
     data: [],
+    dataStatus: "idle",
     current: {},
+    currentStatus: "idle",
   },
   reducers: {
     changeCity: (state, action) => {
@@ -25,10 +21,24 @@ const weatherSlice = createSlice({
   },
   extraReducers: {
     [fetchWeatherData.fulfilled]: (state, action) => {
+      state.dataStatus = "succeeded";
       state.data = [...state.data, action.payload];
     },
+    [fetchWeatherData.rejected]: (state, action) => {
+      state.dataStatus = "failed";
+    },
+    [fetchWeatherData.pending]: (state, action) => {
+      state.dataStatus = "loading";
+    },
     [fetchWeatherDataCurrent.fulfilled]: (state, action) => {
+      state.currentStatus = "succeeded";
       state.current = action.payload;
+    },
+    [fetchWeatherDataCurrent.rejected]: (state, action) => {
+      state.currentStatus = "failed";
+    },
+    [fetchWeatherDataCurrent.pending]: (state, action) => {
+      state.currentStatus = "loading";
     },
   },
 });
