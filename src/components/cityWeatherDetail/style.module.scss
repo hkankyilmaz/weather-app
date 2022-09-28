@@ -19,6 +19,9 @@
     -moz-appearance: none;
     -ms-appearance: none;
     appearance: none;
+    background-image: none;
+    outline: 0;
+    box-shadow: none;
   }
   select:focus {
     background-color: #fff;
