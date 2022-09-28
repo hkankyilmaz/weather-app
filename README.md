@@ -2,6 +2,7 @@
 
 🔸 You can see weather condition of cities of Turkey. <br>
 🔸 This web app built with using [React](https://reactjs.org/). <br>
+🔸 Click and see live demo... [Here](https://weather-app-turker-cities.vercel.app/).
 
 ## 💻 Setup <br>
 
