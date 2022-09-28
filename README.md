@@ -1,4 +1,4 @@
-# Find Event
+# Weather App
 
 🔸 You can see weather condition of cities of Turkey. <br>
 🔸 This web app built with using [React](https://reactjs.org/). <br>
