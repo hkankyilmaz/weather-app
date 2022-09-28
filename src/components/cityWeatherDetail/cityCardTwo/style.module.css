@@ -82,6 +82,7 @@
 }
 
 .cityInfo {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -118,5 +119,11 @@
 .cityInfo p:nth-of-type(3) {
   font-size: 1.1em;
   font-style: oblique;
+}
+
+.date {
+  position: absolute;
+  right: 1em;
+  font-size: 1.1em;
 }
 /*# sourceMappingURL=style.module.css.map */

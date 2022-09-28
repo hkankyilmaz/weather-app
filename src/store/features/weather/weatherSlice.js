@@ -32,7 +32,7 @@ const weatherSlice = createSlice({
     },
     [fetchWeatherDataCurrent.fulfilled]: (state, action) => {
       state.currentStatus = "succeeded";
-      state.current = [...state.current, action.payload];
+      state.current = [action.payload];
     },
     [fetchWeatherDataCurrent.rejected]: (state, action) => {
       state.currentStatus = "failed";

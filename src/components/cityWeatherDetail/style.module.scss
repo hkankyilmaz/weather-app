@@ -22,11 +22,12 @@
     justify-content: center;
     align-content: center;
   }
-  span {
-    width: 100%;
-    height: 0.1em;
-    background-color: #ec5990;
-  }
+}
+
+.span {
+  width: 100%;
+  height: 1px;
+  background-color: #ec5990;
 }
 
 .btn {
@@ -83,4 +84,17 @@
   font-size: 5em;
   color: #000;
   margin-right: 0.2em;
+}
+
+.containerInfo {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-size: 2em;
+  p {
+    color: #ec5990;
+  }
 }

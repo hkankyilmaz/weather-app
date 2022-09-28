@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import styles from "./style.module.css";
 import Container from "@mui/material/Container";
 import { RiTempHotLine } from "react-icons/ri";
-import { GiSunrise } from "react-icons/gi";
-import { GiSunset } from "react-icons/gi";
+import { GiSunset, GiSunrise } from "react-icons/gi";
 import { WiHumidity } from "react-icons/wi";
 import { FaWind } from "react-icons/fa";
 import { MdOutlineCompress } from "react-icons/md";
@@ -13,21 +12,21 @@ import { cities } from "../../constants/cities";
 import CardCityTwo from "./cityCardTwo";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchWeatherDataCurrent } from "../../services/services";
+import { getDate } from "../../hook/getDate";
 import { useParams } from "react-router";
+import { useNavigate } from "react-router";
 
 const Detail = () => {
-  const [value, setValue] = React.useState("istanbul");
   const param = useParams();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+  let date = getDate(0);
 
-  console.log(param);
   const current = useSelector((state) => state.weather.current);
   const currentStatus = useSelector((state) => state.weather.currentStatus);
   const city = cities.filter(
     (city) => city.name.toLowerCase() === param.city.toLowerCase()
   );
-  console.log(current);
-  console.log(city);
 
   useEffect(() => {
     dispatch(fetchWeatherDataCurrent(param.city));
@@ -47,11 +46,24 @@ const Detail = () => {
               }}
               xs={12}
             >
-              <button style={{ cursor: "pointer" }} className={styles.btn}>
-                Anasayfa
-              </button>
+              <div>
+                <button
+                  onClick={() => navigate("/")}
+                  style={{ cursor: "pointer" }}
+                  className={styles.btn}
+                >
+                  Anasayfa
+                </button>
+                <button
+                  onClick={() => navigate("/map")}
+                  style={{ cursor: "pointer" }}
+                  className={styles.btn}
+                >
+                  Harita
+                </button>
+              </div>
               <select
-                onChange={(e) => setValue(e.target.value)}
+                onChange={(e) => navigate(`/${e.target.value}`)}
                 placeholder="Lütfen Şehir Seçin..."
               >
                 <option value="">Şehir Seçin</option>
@@ -68,13 +80,15 @@ const Detail = () => {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "flex-start",
-                marginBottom: "2em",
+                marginBottom: "1em",
               }}
               xs={12}
             >
-              <p className={styles.location}>İstanbul</p>
-              <p className={styles.date}>Salı,Eylül 29</p>
-              <span></span>
+              <p className={styles.location}> {city[0].name} </p>
+              <p className={styles.date}>
+                {date.day},{date.month} {date.dayOfMonth}
+              </p>
+              <span className={styles.span}></span>
             </Grid>
             <Grid
               container
@@ -82,6 +96,7 @@ const Detail = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                marginBottom: "1em",
               }}
               xs={12}
               md={6}
@@ -90,7 +105,7 @@ const Detail = () => {
                 <WeatherIcon
                   className={styles.weatherIcon}
                   name="owm"
-                  iconId="800"
+                  iconId={current[0].list[3].weather[0].id}
                   flip="horizontal"
                   rotate="90"
                 />
@@ -108,7 +123,7 @@ const Detail = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                marginBottom: "2em",
+                marginBottom: "1em",
               }}
               xs={12}
               md={6}
@@ -154,29 +169,40 @@ const Detail = () => {
                 </div>
               </div>
             </Grid>
-            <Grid xs={12} md={6} lg={4}>
-              <CardCityTwo city={city} current={current} num={3} />
+            <Grid container xs={12}>
+              <span className={styles.span}></span>
             </Grid>
             <Grid xs={12} md={6} lg={4}>
-              <CardCityTwo city={city} current={current} num={11} />
+              <CardCityTwo city={city} current={current} num={3} dayNum={0} />
             </Grid>
             <Grid xs={12} md={6} lg={4}>
-              <CardCityTwo city={city} current={current} num={19} />
+              <CardCityTwo city={city} current={current} num={11} dayNum={1} />
+            </Grid>
+            <Grid xs={12} md={6} lg={4}>
+              <CardCityTwo city={city} current={current} num={19} dayNum={2} />
             </Grid>
             <Grid xs={12} md={6} lg={6}>
-              <CardCityTwo city={city} current={current} num={27} />
+              <CardCityTwo city={city} current={current} num={27} dayNum={3} />
             </Grid>
             <Grid xs={12} md={6} lg={6}>
-              <CardCityTwo city={city} current={current} num={35} />
+              <CardCityTwo city={city} current={current} num={35} dayNum={4} />
             </Grid>
           </Grid>
         </Container>
       </div>
     );
-  } else {
-    <div className={styles.container}>
-      <p>Loading...</p>
-    </div>;
+  } else if (currentStatus === "loading") {
+    return (
+      <div className={styles.containerInfo}>
+        <p>Loading...</p>
+      </div>
+    );
+  } else if (currentStatus === "failed") {
+    return (
+      <div className={styles.containerInfo}>
+        <p>There is a problem about API services...</p>
+      </div>
+    );
   }
 };
 

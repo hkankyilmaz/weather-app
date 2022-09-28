@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./style.module.css";
-import { useSelector, useDispatch } from "react-redux";
 import { WiHumidity } from "react-icons/wi";
 import { MdOutlineVisibility } from "react-icons/md";
 import { GiWindSlap } from "react-icons/gi";
 import WeatherIcon from "react-icons-weather";
-import { cities } from "../../../constants/cities";
-import { current } from "@reduxjs/toolkit";
+import { getDate } from "../../../hook/getDate";
 
-const CardCityTwo = ({ current, city, num }) => {
+const CardCityTwo = ({ current, city, num, dayNum }) => {
+  const date = getDate(dayNum);
+
   if (current.length !== 0) {
     return (
       <div className={styles.container}>
@@ -40,6 +40,9 @@ const CardCityTwo = ({ current, city, num }) => {
           <p> {current[0].city.name} </p>
           <p> {city[0].region} </p>
           <p>{current[0].list[num].weather[0].description.toUpperCase()} </p>
+          <p className={styles.date}>
+            {date.day},{date.month} {date.dayOfMonth}
+          </p>
         </div>
       </div>
     );

@@ -15,9 +15,9 @@ const Header = () => {
         <span></span>
         <p className={styles.date}> {now} </p>
         <div className={styles.btnContainer}>
-          <button onClick={() => navigate("/map")}>Harita</button>
-          <span></span>
           <button onClick={() => navigate("/")}>Liste</button>
+          <span></span>
+          <button onClick={() => navigate("/map")}>Harita</button>
         </div>
       </div>
     </>
