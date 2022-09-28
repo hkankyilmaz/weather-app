@@ -7,4 +7,11 @@
 
 body {
   font-family: "Righteous", cursive;
+  position: relative;
+  min-height: 100vh;
+}
+@media (max-width: 900px) {
+  body {
+    font-size: 12px;
+  }
 }

@@ -1,0 +1,86 @@
+.container {
+  color: black;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  padding: 2em 0em;
+  box-sizing: border-box;
+  select {
+    width: 22em;
+    padding: 0.5em 0.5em;
+    border-radius: 0.5em;
+    font-family: "Righteous", cursive;
+    border: 1px solid #ec5990;
+    margin-bottom: 2em;
+    margin-top: 2em;
+  }
+  select:focus {
+    background-color: #fff;
+  }
+  p {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  span {
+    width: 100%;
+    height: 0.1em;
+    background-color: #ec5990;
+  }
+}
+
+.btn {
+  background-color: #ec5990;
+  color: #fff;
+  margin-top: 2em;
+}
+.btn:hover {
+  background-color: #fff;
+  color: #ec5990;
+}
+
+.location {
+  font-size: 3em;
+}
+.date {
+  font-size: 1.2em;
+}
+
+.cal {
+  font-size: 3em;
+  color: black;
+}
+.description {
+  font-size: 1.2em;
+}
+
+.desContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  div {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+
+    p {
+      display: flex;
+      font-size: 1em;
+      justify-content: center;
+      align-items: center;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.icon {
+  font-size: 1.5em;
+  color: #000;
+}
+
+.weatherIcon {
+  font-size: 5em;
+  color: #000;
+  margin-right: 0.2em;
+}

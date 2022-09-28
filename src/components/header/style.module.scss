@@ -14,11 +14,17 @@
   height: 4em;
   width: 100%;
   background-color: #191d3a;
+  span {
+    width: 0.2em;
+    height: 2em;
+    margin-right: 0.5em;
+    background-color: #fff;
+  }
 
   .clock {
     text-align: center;
     width: 6em;
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: bold;
     color: #fff;
     margin-right: 0.5em;
@@ -30,7 +36,7 @@
   .date {
     text-align: center;
     width: 6em;
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: bold;
     color: #fff;
     margin-right: 1em;
@@ -69,8 +75,22 @@
       font-family: "Righteous", cursive;
     }
     button:hover {
-      background-color: rgba(255, 182, 193, 0.3);
+      background-color: #fff;
+      color: #ec5990;
+      border: 3px solid #ec5990;
       scale: 1.1;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    div {
+      right: 100%;
+      transform: translateX(110%);
+      button {
+        width: 7.5em;
+      }
     }
   }
 }

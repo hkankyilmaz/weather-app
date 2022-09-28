@@ -15,10 +15,10 @@ export const fetchWeatherData = createAsyncThunk(
 
 export const fetchWeatherDataCurrent = createAsyncThunk(
   "weather/fetcWeatherDataCurrent",
-  async (city) => {
+  async (name) => {
     const responce = await axios.get(
-      `https://api.openweathermap.org/data/2.5/forecast?lat=${city.latitude}&lon=${city.longitude}&units=metric&appid=${process.env.REACT_APP_API_KEY}`
-      //`https://api.openweathermap.org/data/2.5/forecast?q=${city.name}&appid=${process.env.REACT_APP_API_KEY}`
+      // `https://api.openweathermap.org/data/2.5/forecast?lat=${city.latitude}&lon=${city.longitude}&units=metric&appid=${process.env.REACT_APP_API_KEY}`
+      `https://api.openweathermap.org/data/2.5/forecast?q=${name}&units=metric&lang=tr&appid=${process.env.REACT_APP_API_KEY}`
     );
     return responce.data;
   }

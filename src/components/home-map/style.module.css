@@ -1,0 +1,28 @@
+.h1 {
+  margin-bottom: 0;
+}
+
+.h2 {
+  color: #ec5990;
+  text-align: center;
+}
+
+.container {
+  overflow-x: hidden;
+}
+
+.container div:nth-of-type(2) {
+  position: absolute;
+  bottom: -12em;
+}
+
+@media (max-width: 900px) {
+  .container {
+    overflow-x: hidden;
+  }
+  .container div:nth-of-type(2) {
+    position: absolute;
+    bottom: 0;
+  }
+}
+/*# sourceMappingURL=style.module.css.map */

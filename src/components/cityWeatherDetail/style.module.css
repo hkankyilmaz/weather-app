@@ -1,0 +1,119 @@
+.container {
+  color: black;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  padding: 2em 0em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container select {
+  width: 22em;
+  padding: 0.5em 0.5em;
+  border-radius: 0.5em;
+  font-family: "Righteous", cursive;
+  border: 1px solid #ec5990;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
+.container select:focus {
+  background-color: #fff;
+}
+
+.container p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.container span {
+  width: 100%;
+  height: 0.1em;
+  background-color: #ec5990;
+}
+
+.btn {
+  background-color: #ec5990;
+  color: #fff;
+  margin-top: 2em;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #ec5990;
+}
+
+.location {
+  font-size: 3em;
+}
+
+.date {
+  font-size: 1.2em;
+}
+
+.cal {
+  font-size: 3em;
+  color: black;
+}
+
+.description {
+  font-size: 1.2em;
+}
+
+.desContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.desContainer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.desContainer div p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.icon {
+  font-size: 1.5em;
+  color: #000;
+}
+
+.weatherIcon {
+  font-size: 5em;
+  color: #000;
+  margin-right: 0.2em;
+}
+/*# sourceMappingURL=style.module.css.map */

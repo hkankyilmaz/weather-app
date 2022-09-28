@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 import {
   fetchWeatherData,
@@ -10,7 +10,7 @@ const weatherSlice = createSlice({
   initialState: {
     data: [],
     dataStatus: "idle",
-    current: {},
+    current: [],
     currentStatus: "idle",
   },
   reducers: {
@@ -32,7 +32,7 @@ const weatherSlice = createSlice({
     },
     [fetchWeatherDataCurrent.fulfilled]: (state, action) => {
       state.currentStatus = "succeeded";
-      state.current = action.payload;
+      state.current = [...state.current, action.payload];
     },
     [fetchWeatherDataCurrent.rejected]: (state, action) => {
       state.currentStatus = "failed";

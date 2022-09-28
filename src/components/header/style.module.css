@@ -22,10 +22,17 @@
   background-color: #191d3a;
 }
 
+.container span {
+  width: 0.2em;
+  height: 2em;
+  margin-right: 0.5em;
+  background-color: #fff;
+}
+
 .container .clock {
   text-align: center;
   width: 6em;
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: bold;
   color: #fff;
   margin-right: 0.5em;
@@ -38,7 +45,7 @@
 .container .date {
   text-align: center;
   width: 6em;
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: bold;
   color: #fff;
   margin-right: 1em;
@@ -90,7 +97,20 @@
 }
 
 .container div button:hover {
-  background-color: rgba(255, 182, 193, 0.3);
+  background-color: #fff;
+  color: #ec5990;
+  border: 3px solid #ec5990;
   scale: 1.1;
+}
+
+@media (max-width: 900px) {
+  .container div {
+    right: 100%;
+    -webkit-transform: translateX(110%);
+            transform: translateX(110%);
+  }
+  .container div button {
+    width: 7.5em;
+  }
 }
 /*# sourceMappingURL=style.module.css.map */

@@ -7,6 +7,7 @@ import { cities } from "../../constants/cities";
 import { mainCities } from "../../constants/mainCities";
 import { fetchWeatherData } from "../../services/services";
 import { useSelector, useDispatch } from "react-redux";
+import Footer from "../footer";
 
 const Home = () => {
   const [search, setSearch] = useState("");
@@ -51,6 +52,7 @@ const Home = () => {
           <CityLabel key={idx} city={item.name} />
         ))}
       </div>
+      <Footer />
     </div>
   );
 };
