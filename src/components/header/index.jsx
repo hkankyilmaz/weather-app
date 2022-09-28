@@ -5,7 +5,7 @@ import dayjs from "dayjs";
 import { useNavigate } from "react-router";
 
 const Header = () => {
-  const now = dayjs().format("DD/MM/YYYY");
+  const now = dayjs().format("DD/MM/YY");
   const navigate = useNavigate();
   return (
     <>
