@@ -41,7 +41,8 @@ const CardCityTwo = ({ current, city, num, dayNum }) => {
           <p> {city[0].region} </p>
           <p>{current[0].list[num].weather[0].description.toUpperCase()} </p>
           <p className={styles.date}>
-            {date.day},{date.month} {date.dayOfMonth}
+            {date.day === undefined ? "Pazar" : date.day},{date.month}{" "}
+            {date.dayOfMonth}
           </p>
         </div>
       </div>

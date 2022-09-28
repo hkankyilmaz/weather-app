@@ -29,8 +29,8 @@ export const getDate = (num) => {
   };
 
   const currday = dayjs().add(num, "day").day();
-  const currmonth = dayjs().month();
-  const currdate = dayjs().date();
+  const currmonth = dayjs().add(num, "day").month();
+  const currdate = dayjs().add(num, "day").date();
 
   return (currDate = {
     day: days[`${currday}`],
