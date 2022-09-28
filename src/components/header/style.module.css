@@ -113,4 +113,22 @@
     width: 7.5em;
   }
 }
+
+@media (max-width: 450px) {
+  .container div button {
+    border: 2px solid white;
+    padding: 4px 4px;
+    width: 4rem;
+  }
+  .container .clock {
+    border: 2px solid white;
+    padding: 4px 4px;
+    width: 4rem;
+  }
+  .container .date {
+    border: 2px solid white;
+    padding: 4px 4px;
+    width: 4rem;
+  }
+}
 /*# sourceMappingURL=style.module.css.map */

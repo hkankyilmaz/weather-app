@@ -94,3 +94,24 @@
     }
   }
 }
+@media (max-width: 450px) {
+  .container {
+    div {
+      button {
+        border: 2px solid white;
+        padding: 4px 4px;
+        width: 4rem;
+      }
+    }
+    .clock {
+      border: 2px solid white;
+      padding: 4px 4px;
+      width: 4rem;
+    }
+    .date {
+      border: 2px solid white;
+      padding: 4px 4px;
+      width: 4rem;
+    }
+  }
+}
