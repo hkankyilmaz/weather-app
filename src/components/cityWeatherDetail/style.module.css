@@ -15,7 +15,17 @@
   font-family: "Righteous", cursive;
   border: 1px solid #ec5990;
   margin-bottom: 2em;
+  background-color: #fff;
+  color: #000;
   margin-top: 2em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .container select:focus {
