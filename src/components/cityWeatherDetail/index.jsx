@@ -33,164 +33,192 @@ const Detail = () => {
   }, [param.city]);
 
   if (currentStatus === "succeeded") {
-    return (
-      <div className={styles.container}>
-        <Container maxWidth="xl">
-          <Grid container spacing={2}>
-            <Grid
-              container
-              sx={{
-                justifyContent: "center",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-              xs={12}
-            >
-              <div>
-                <button
-                  onClick={() => navigate("/")}
-                  style={{ cursor: "pointer" }}
-                  className={styles.btn}
-                >
-                  Anasayfa
-                </button>
-                <button
-                  onClick={() => navigate("/map")}
-                  style={{ cursor: "pointer" }}
-                  className={styles.btn}
-                >
-                  Harita
-                </button>
-              </div>
-              <select
-                onChange={(e) => navigate(`/${e.target.value}`)}
-                placeholder="Lütfen Şehir Seçin..."
+    if (current[0]) {
+      return (
+        <div className={styles.container}>
+          <Container maxWidth="xl">
+            <Grid container spacing={2}>
+              <Grid
+                container
+                sx={{
+                  justifyContent: "center",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+                xs={12}
               >
-                <option value="">Şehir Seçin</option>
-                {cities.map((city, idx) => (
-                  <option value={city.name} key={idx}>
-                    {city.name}
-                  </option>
-                ))}
-              </select>
-            </Grid>
-            <Grid
-              container
-              sx={{
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "flex-start",
-                marginBottom: "1em",
-              }}
-              xs={12}
-            >
-              <p className={styles.location}> {city[0].name} </p>
-              <p className={styles.date}>
-                {date.day},{date.month} {date.dayOfMonth}
-              </p>
-              <span className={styles.span}></span>
-            </Grid>
-            <Grid
-              container
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                marginBottom: "1em",
-              }}
-              xs={12}
-              md={6}
-            >
-              <div>
-                <WeatherIcon
-                  className={styles.weatherIcon}
-                  name="owm"
-                  iconId={current[0].list[3].weather[0].id}
-                  flip="horizontal"
-                  rotate="90"
-                />
-              </div>
-              <div>
-                <p className={styles.cal}>{current[0].list[3].main.temp}°C </p>
-                <p className={styles.description}>
-                  {current[0].list[3].weather.description}
+                <div>
+                  <button
+                    onClick={() => navigate("/")}
+                    style={{ cursor: "pointer" }}
+                    className={styles.btn}
+                  >
+                    Anasayfa
+                  </button>
+                  <button
+                    onClick={() => navigate("/map")}
+                    style={{ cursor: "pointer" }}
+                    className={styles.btn}
+                  >
+                    Harita
+                  </button>
+                </div>
+                <select
+                  onChange={(e) => navigate(`/${e.target.value}`)}
+                  placeholder="Lütfen Şehir Seçin..."
+                >
+                  <option value="">Şehir Seçin</option>
+                  {cities.map((city, idx) => (
+                    <option value={city.name} key={idx}>
+                      {city.name}
+                    </option>
+                  ))}
+                </select>
+              </Grid>
+              <Grid
+                container
+                sx={{
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "flex-start",
+                  marginBottom: "1em",
+                }}
+                xs={12}
+              >
+                <p className={styles.location}> {city[0].name} </p>
+                <p className={styles.date}>
+                  {date.day},{date.month} {date.dayOfMonth}
                 </p>
-              </div>
-            </Grid>
-            <Grid
-              container
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                marginBottom: "1em",
-              }}
-              xs={12}
-              md={6}
-            >
-              <div className={styles.desContainer}>
-                <div style={{ marginRight: "2em" }}>
-                  <p>
-                    <RiTempHotLine className={styles.icon} />
-                  </p>
-                  <p>Feels Like: {current[0].list[3].main.feels_like} °C </p>
+                <span className={styles.span}></span>
+              </Grid>
+              <Grid
+                container
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginBottom: "1em",
+                }}
+                xs={12}
+                md={6}
+              >
+                <div>
+                  <WeatherIcon
+                    className={styles.weatherIcon}
+                    name="owm"
+                    iconId={current[0].list[3].weather[0].id}
+                    flip="horizontal"
+                    rotate="90"
+                  />
                 </div>
                 <div>
-                  <p>
-                    <GiSunrise className={styles.icon} />
+                  <p className={styles.cal}>
+                    {current[0].list[3].main.temp}°C{" "}
                   </p>
-                  <p>Sunrise : 06:40</p>
-                </div>
-                <div>
-                  <p>
-                    <GiSunset className={styles.icon} />
+                  <p className={styles.description}>
+                    {current[0].list[3].weather.description}
                   </p>
-                  <p>Sunset : 18:45</p>
                 </div>
-              </div>
-              <div className={styles.desContainer}>
-                <div>
-                  <p>
-                    <WiHumidity className={styles.icon} />
-                  </p>
-                  <p>Humidity :{current[0].list[3].main.pressure} %</p>
+              </Grid>
+              <Grid
+                container
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginBottom: "1em",
+                }}
+                xs={12}
+                md={6}
+              >
+                <div className={styles.desContainer}>
+                  <div style={{ marginRight: "2em" }}>
+                    <p>
+                      <RiTempHotLine className={styles.icon} />
+                    </p>
+                    <p>Feels Like: {current[0].list[3].main.feels_like} °C </p>
+                  </div>
+                  <div>
+                    <p>
+                      <GiSunrise className={styles.icon} />
+                    </p>
+                    <p>Sunrise : 06:40</p>
+                  </div>
+                  <div>
+                    <p>
+                      <GiSunset className={styles.icon} />
+                    </p>
+                    <p>Sunset : 18:45</p>
+                  </div>
                 </div>
-                <div>
-                  <p>
-                    <FaWind className={styles.icon} />
-                  </p>
-                  <p>WindSpeed :{current[0].list[3].wind.speed} m/sn</p>
+                <div className={styles.desContainer}>
+                  <div>
+                    <p>
+                      <WiHumidity className={styles.icon} />
+                    </p>
+                    <p>Humidity :{current[0].list[3].main.pressure} %</p>
+                  </div>
+                  <div>
+                    <p>
+                      <FaWind className={styles.icon} />
+                    </p>
+                    <p>WindSpeed :{current[0].list[3].wind.speed} m/sn</p>
+                  </div>
+                  <div>
+                    <p>
+                      <MdOutlineCompress className={styles.icon} />
+                    </p>
+                    <p>Pressure :{current[0].list[3].main.pressure} hPa</p>
+                  </div>
                 </div>
-                <div>
-                  <p>
-                    <MdOutlineCompress className={styles.icon} />
-                  </p>
-                  <p>Pressure :{current[0].list[3].main.pressure} hPa</p>
-                </div>
-              </div>
+              </Grid>
+              <Grid container xs={12}>
+                <span className={styles.span}></span>
+              </Grid>
+              <Grid xs={12} md={6} lg={4}>
+                <CardCityTwo city={city} current={current} num={3} dayNum={0} />
+              </Grid>
+              <Grid xs={12} md={6} lg={4}>
+                <CardCityTwo
+                  city={city}
+                  current={current}
+                  num={11}
+                  dayNum={1}
+                />
+              </Grid>
+              <Grid xs={12} md={6} lg={4}>
+                <CardCityTwo
+                  city={city}
+                  current={current}
+                  num={19}
+                  dayNum={2}
+                />
+              </Grid>
+              <Grid xs={12} md={6} lg={6}>
+                <CardCityTwo
+                  city={city}
+                  current={current}
+                  num={27}
+                  dayNum={3}
+                />
+              </Grid>
+              <Grid xs={12} md={6} lg={6}>
+                <CardCityTwo
+                  city={city}
+                  current={current}
+                  num={35}
+                  dayNum={4}
+                />
+              </Grid>
             </Grid>
-            <Grid container xs={12}>
-              <span className={styles.span}></span>
-            </Grid>
-            <Grid xs={12} md={6} lg={4}>
-              <CardCityTwo city={city} current={current} num={3} dayNum={0} />
-            </Grid>
-            <Grid xs={12} md={6} lg={4}>
-              <CardCityTwo city={city} current={current} num={11} dayNum={1} />
-            </Grid>
-            <Grid xs={12} md={6} lg={4}>
-              <CardCityTwo city={city} current={current} num={19} dayNum={2} />
-            </Grid>
-            <Grid xs={12} md={6} lg={6}>
-              <CardCityTwo city={city} current={current} num={27} dayNum={3} />
-            </Grid>
-            <Grid xs={12} md={6} lg={6}>
-              <CardCityTwo city={city} current={current} num={35} dayNum={4} />
-            </Grid>
-          </Grid>
-        </Container>
-      </div>
-    );
+          </Container>
+        </div>
+      );
+    } else {
+      <div className={styles.containerInfo}>
+        <p>There is a problem about API services...</p>
+      </div>;
+    }
   } else if (currentStatus === "loading") {
     return (
       <div className={styles.containerInfo}>

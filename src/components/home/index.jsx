@@ -17,9 +17,6 @@ const Home = () => {
     return city.name.toLowerCase().includes(search.toLowerCase());
   });
 
-  console.log(search);
-  console.log(filteredCities);
-
   useEffect(() => {
     mainCities.map((city) => {
       dispatch(fetchWeatherData(city));

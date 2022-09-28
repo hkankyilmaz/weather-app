@@ -14,7 +14,7 @@ function HomeMap() {
       <TurkeyMap
         customStyle={{ idleColor: "#191d3a", hoverColor: "#ec5990" }}
         showTooltip="true"
-        onClick={(city) => navigate(`/${city.id}`)}
+        onClick={(city) => navigate(`/${city.name}`)}
       />
       <Footer />
     </div>
